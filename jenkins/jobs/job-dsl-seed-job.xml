@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Generates for all @MarcelBirkner GitHub Repositories a Jenkins Job using Groovy JSON Slurper and GitHub REST API</description>
+  <description>Generates Jenkins Jobs using Job DSL scripts</description>
   <logRotator class="hudson.tasks.LogRotator">
     <daysToKeep>-1</daysToKeep>
     <numToKeep>10</numToKeep>
@@ -43,7 +43,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.38">
-      <targets>jenkins/seedjobs/1-github-seed-jobs.groovy</targets>
+      <targets>jenkins/seedjobs/*.groovy</targets>
       <usingScriptText>false</usingScriptText>
       <ignoreExisting>false</ignoreExisting>
       <removedJobAction>DELETE</removedJobAction>

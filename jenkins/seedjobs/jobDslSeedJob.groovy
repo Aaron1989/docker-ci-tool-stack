@@ -8,8 +8,9 @@ for(i in 0..10) {
         remote {
           url(giturl)
         }
-        createTag(false)
-        clean()
+        extensions {
+          cleanAfterCheckout()
+        }
       }
     }
     triggers {
@@ -39,12 +40,12 @@ listView('Seed Jobs') {
     }
     columns {
         status()
+        buildButton()
         weather()
         name()
         lastSuccess()
         lastFailure()
         lastDuration()
-        buildButton()
     }
 }
 
@@ -57,11 +58,11 @@ listView('Job DSL Tutorial') {
     }
     columns {
         status()
+        buildButton()
         weather()
         name()
         lastSuccess()
         lastFailure()
         lastDuration()
-        buildButton()
     }
 }
